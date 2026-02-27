@@ -68,15 +68,15 @@ export default function SignUpPage() {
             className="hidden dark:block"
           />
 
-          <div>
-            <p className="text-set1 font-bold text-neutral-900 dark:text-white">
-              Create your account
-            </p>
-            <p className="text-set4 font-medium text-neutral-800 dark:text-neutral-100">
-              Join us and start saving your favorite links - organized,
-              searchable, and always within reach.
-            </p>
-          </div>
+            <div>
+              <p className="text-set1 font-bold text-neutral-900 dark:text-white">
+                Create your account
+              </p>
+              <p className="text-set4 font-medium text-neutral-800 dark:text-neutral-100">
+                Join us and start saving your favorite links - organized,
+                searchable, and always within reach.
+              </p>
+            </div>
 
           <form
             onSubmit={handleSubmit(onSubmit)}
@@ -89,7 +89,7 @@ export default function SignUpPage() {
                 htmlFor="name"
                 className="block text-set4 font-bold text-neutral-900 dark:text-white"
               >
-                Full name <span className="text-teal-700 dark:text-neutral-100">*</span>
+                Full name *
                 <input
                   type="text"
                   id="name"
@@ -122,6 +122,16 @@ export default function SignUpPage() {
                   type="text"
                   id="email"
                   className={`login-input ${errors.email
+            <div>
+              <label
+                htmlFor="email"
+                className="block text-set4 font-bold text-neutral-900 dark:text-white "
+              >
+                Email address *
+                <input
+                  type="text"
+                  id="email"
+                  className={`login-input ${errors.email
                     ? "outline-red-800 dark:outline-red-600"
                     : "outline-neutral-500 dark:outline-neutral-300"
                     }`}
@@ -149,7 +159,7 @@ export default function SignUpPage() {
                 htmlFor="password"
                 className="block text-set4 font-bold text-neutral-900 dark:text-white "
               >
-                Password <span className="text-teal-700 dark:text-neutral-100">*</span>
+                Password *
                 <input
                   type="password"
                   id="password"
