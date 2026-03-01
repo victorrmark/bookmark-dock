@@ -203,7 +203,7 @@ export default function ResetPasswordPage() {
 
           <DialogFooter>
             <DialogClose asChild>
-              <Button>Back to Login</Button>
+              <Button className="login-links">Back to Login</Button>
             </DialogClose>
           </DialogFooter>
         </DialogContent>

@@ -8,15 +8,14 @@ import Notfound from "@/public/404.png";
 
 export default function NotFound() {
     return (
-        <div className="flex min-h-screen items-center justify-center bg-muted/40 p-4 font-ma">
-            <Card className="w-full max-w-lg shadow-xl">
+        <div className="flex min-h-screen items-center justify-center dark:bg-neutral-900 p-4 font-manrope">
+            <Card className="w-full max-w-lg shadow-xl bg-white dark:bg-neutral-800">
                 <CardContent className="flex flex-col items-center gap-4 p-10 pt-3 text-center">
                     <Image
                         src={Notfound}
                         alt="BookMarker Logo"
                         width={270}
                         height={100}
-                        className="dark:hidden"
                     />
 
                     <div className="space-y-2">
