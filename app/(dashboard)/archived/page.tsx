@@ -4,7 +4,6 @@ import { useArchives } from "@/hooks/useBookmark";
 import { useMemo } from "react";
 import { useBookmarkContext } from "../BookmarkContext";
 import EmptyState from "@/app/(dashboard)/emptyState";
-import { SkeletonCard } from "@/components/layout/skeleton";
 import { useUserContext } from "../UserContext";
 
 
@@ -16,7 +15,7 @@ export default function Archived() {
   const visibleBookmarks = useMemo(() => {
     let result = bookmarks;
 
-    //search logic
+    //search
     if (searchQuery) {
       result = result?.filter((bookmark) =>
         bookmark.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -40,11 +39,11 @@ export default function Archived() {
 
     }
 
-    //logic to display pinned bookmarks on top
+    //display pinned bookmarks on top
     const pinned = result?.filter((bookmark) => bookmark.is_pinned);
     const unpinned = result?.filter((bookmark) => !bookmark.is_pinned);
 
-    //sorting logic
+    //sorting
     unpinned.sort((a, b) => {
       if (sortBy === "recent") {
         return new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
@@ -67,8 +66,7 @@ export default function Archived() {
 
   return (
     <>
-      {isLoading ? <SkeletonCard /> : null}
-      <EmptyState bookmarks={bookmarks} visibleBookmarks={visibleBookmarks.length === 0} />
+      <EmptyState bookmarks={bookmarks} visibleBookmarks={visibleBookmarks.length === 0} isLoading={isLoading}/>
       {visibleBookmarks?.map((bookmark) => (
         <BookmarkCard key={bookmark.id} bookmark={bookmark} />
       ))}

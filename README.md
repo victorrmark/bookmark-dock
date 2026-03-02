@@ -1,4 +1,4 @@
-# Bookmark Manager — A Tag-Driven Bookmark Dashboard
+# Bookmark Dock — A Tag-Driven Bookmark Dashboard
 
 A modern bookmark manager built with Next.js and Supabase that helps developers organise resources using controlled tags, smart filtering, pinning, archiving, and fast search. 
 
@@ -66,7 +66,6 @@ Next.js API routes:
 - Secure Supabase access
 - Update behavioural metrics (last_visited, visit_count)
 - Enforce authentication
-- Centralise business logic
 
 **Data Derivation Strategy**
 - Tag badge counts are derived client-side
@@ -103,6 +102,7 @@ Create .env.local:
 NEXT_PUBLIC_SUPABASE_URL=(from supabse)
 NEXT_PUBLIC_SUPABASE_ANON_KEY=(from supabse)
 SUPABASE_SERVICE_ROLE_KEY=(from supabase)
+NEXT_PUBLIC_URL=()
 ```
 
 Run development Server
